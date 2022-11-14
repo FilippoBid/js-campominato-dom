@@ -144,7 +144,13 @@ function creaGrid(selCol, containerSquare) {
                 this.classList.add("bg-success");
                 //sopra 
                 console.log(document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]);
+                console.log(document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+2)]);
+                console.log(document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol)]);
                 console.log(document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol+1))+(NCol*2)]);
+                console.log(document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol+2))+(NCol*2)]);
+                console.log(document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol))+(NCol*2)]);
+                console.log(this.nextElementSibling);
+                console.log(this.previousElementSibling);
                 /* console.log(NCol);
                 console.log(i); */
                 //elemento sopra
@@ -154,7 +160,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", (document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]))
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
@@ -165,7 +171,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", (document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+2)]))
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
@@ -176,7 +182,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", (document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]))
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
@@ -188,21 +194,22 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", this.previousElementSibling)
 
                         
-                }else if (this.previousElementSibling.dataset.boom === "1"){
+                }else{
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
                 //verifica elemento destra
-                if (this.nextElementSibling.dataset.boom === "0"){
+                if(this.nextElementSibling){if (this.nextElementSibling.dataset.boom === "0"){
                     
                     this.nextElementSibling.classList.add("bg-success");
                     removeEventListener("click", this.nextElementSibling)
 
                         
-                }else if (this.nextElementSibling.dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
-                }
+                }}
+                
                 //elemento sotto 
                 if ((document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol+1))+(NCol*2)]).dataset.boom === "0") {
                     
@@ -210,7 +217,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", [(this.innerHTML-(NCol+1))+(NCol*2)])
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol+1))+(NCol*2)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
@@ -221,7 +228,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", [(this.innerHTML-(NCol+1))+(NCol*2)])
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol))+(NCol*2)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }
@@ -232,7 +239,7 @@ function creaGrid(selCol, containerSquare) {
                     removeEventListener("click", [(this.innerHTML-(NCol+2))+(NCol*2)])
 
                         
-                }else if ((document.querySelectorAll(".squarestyle")[(this.innerHTML-(NCol+2))+(NCol*2)]).dataset.boom === "1"){
+                }else {
                     //((document.querySelectorAll(".squarestyle")[this.innerHTML-(NCol+1)]).innerHTML = `<i class="fa-solid fa-bomb color-danger"></i>`)
                     parseInt(bombCounter++)
                 }

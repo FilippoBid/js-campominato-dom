@@ -1,4 +1,4 @@
-.squarestyle{aspect-ratio: 1/1;border-top: 1px solid orange ;border-left:1px solid orange ;border-right: 5px solid darkorange ;border-bottom: 5px solid darkorange ;color: yellowgreen} ;
+.squarestyle{aspect-ratio: 1/1;border-top: 2px solid orange ;border-left:2px solid orange ;border-right: 5px solid rgb(75, 75, 75) ;border-bottom: 5px solid rgb(75, 75, 75) ;color: yellowgreen} ;
 .btn {
   color:inherit;
     font-family:inherit;
